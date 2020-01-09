@@ -1,7 +1,11 @@
 pub type Instant = std::time::Instant;
 
+#[cfg(feature = "now")]
+pub static mut TIME: f64 = 0.0;
+
 /// The current time, in milliseconds.
 #[cfg(feature = "now")]
 pub fn now() -> f64 {
-    time::precise_time_s() * 1000.0
+   unsafe {TIME} 
 }
+

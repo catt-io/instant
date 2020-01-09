@@ -19,7 +19,7 @@ pub use crate::wasm::Instant;
     not(any(feature = "stdweb", feature = "wasm-bindgen"))
 ))]
 #[cfg(feature = "now")]
-pub use crate::native::now;
+pub use crate::native::{now, TIME};
 
 #[cfg(all(
     any(target_arch = "wasm32", target_arch = "asmjs"),
